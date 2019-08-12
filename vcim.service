@@ -2,14 +2,14 @@
 Description=vCenter Simulator VCSIM
 After=network.target
 
+[Service]
+ExecStart=/app/vcsim
+Type=simple
+
 Environment=GOVC_URL=https://127.0.0.1:8989
 Environment=GOVC_INSECURE=true
 Environment=GOVC_USERNAME=user
 Environment=GOVC_PASSWORD=pass
-
-[Service]
-ExecStart=/app/vcsim
-Type=simple
 
 [Install]
 WantedBy=multi-user.target
